@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>!!Time Force!!</title>
+	<link type="text/css" rel="stylesheet" href="get_time.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'/>
+<script>
+var startTime = function() {
+
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    var a_p = " ";
+    m = checkTime(m);
+    s = checkTime(s);
+    //alert(m);
+    var t = setTimeout(startTime, 60);
+
+     if (h < 12) {
+            a_p = "<span>AM</span>";
+        } else {
+            a_p = "<span>PM</span>";
+        }
+        if (h === 0) {
+            h = 12;
+        }
+        if (h > 12) {
+            h = h - 12;
+            alert(document.getElementById('time'));
+            document.getElementById('time').innerHTML =    h + ":" + m + ":" + s;
+}
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i}
+    return i;
+}
+</script>
+
+</head>
+<body onload="startTime()"; style="
+    color: Green;
+    font-family: 'Orbitron', sans-serif;
+    float: left;
+    /*margin-left: 500px;*/
+    text-shadow:0px 0px 1px #333;
+    font-size:60px;
+    position:relative;
+    top:-27px;
+    left:-10px; 
+    text-shadow:0px 0px 1px #333;
+    ">
+
+<h1 id="time"></h1>
+
+
+
+</body>
+</html>
+
